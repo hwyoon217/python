@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset = "utf-8/">
+        <style type="text/css">
+            astyle{
+                font-size: 19px;
+                font-family: 명조;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "data">
+            <astyle>
+                <h3>import pandas as pd<br>df = pd.read_csv("iris.csv")</h3><p></p><p></p>
+                <dl>
+                         
+                    <li><b>결측치</b></li>
+                    <ol>                       
+                        <li><b>결측치 구하기</b> : df.isna()</li><p></p>
+                        <li><b>결측치 제거하기</b> : df.dropna()</li><p></p>
+                        <li><b>결측치 치환하기</b> : df.fillna()</li><br><br>
+                    </ol>
+
+                    <li><b>데이터 추출하기</b></li>
+                        <ol>                       
+                            <li><b>df.iloc[ row , column ]</b> : row와 column에 인덱스 번호를 넣어 원하는 데이터를 추출한다.</li><br>
+                            <li><b>df.loc[ row, column ]</b> : row와 column에 라벨 값을 넣어 원하는 데이터를 추출한다. 
+                                문자를 사용하여 조건을 넣을 수 있어서 더 편리하다.</li><br><br>
+                        </ol>
+                   
+                    <li><b>데이터 합치기</b></li>
+                    <ol>                       
+                        <li><b>pd.concat([df_1, df_2])</b></li>
+                        <dd>df_1 옆에 df_2 데이터가 합쳐진다.<br>axis=1 옵션을 쓰면 df_2가 df_1 밑에 붙는다.</dd><p></p>
+                        <li><b>df_1.merge(df_2, left_on = "", right_on = "" , how= "")</b></li>
+                        <dd>변수를 기반으로 데이터를 합친다.<br>left_on에는 df_1의 변수를, right_on에는 df_2의 변수를 입력하면 된다.
+                        how에는 left, right, inner 중 하나를 넣으면 된다.</dd><br>
+                    </ol>
+                    
+                </dl>
+            </astyle>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset = "utf-8/">
+        <style type="text/css">
+            astyle{
+                font-size: 19px;
+                font-family: 명조;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "data">
+            <astyle>
+                <h3>import pandas as pd<br>df = pd.read_csv("iris.csv")</h3><p></p><p></p>
+                <dl>
+                    <li><b>인덱스</b></li>
+                    <ol>                       
+                        <li><b>df.set_index()</b> : 원하는 변수를 인덱스로 설정</li>
+                        <br>
+                        <li><b>df.reset_index()</b> : 인덱스 초기화</li><br><br>
+                    </ol>
+                    
+                    <li><b>시간 변수</b></li>
+                    <ol>                       
+                        <li><b>df["A"]=pd.to_datetime(df["A"])</b></li>
+                        <dd>날짜와 시간이 입력되어있으나, 문자형인 df의 A 변수를 시간속성으로 바꾼다.</dd>
+                        <li><b>df["A"].dt.date</b></li>
+                        <dd>A변수 중 날짜부분만 추출</dd>
+                        <li><b>df["A"].dt.hour</b></li>
+                        <dd>A변수 중 시간부분만 추출</dd><br>** 그 외에도 weekday, year 등을 통해 원하는 값을 추출할 수 있다.<br><br><br>    
+                    </ol>
+                    <dl>
+                        <li><b>데이터 범주화</b></li>
+                        <dd>
+                            pd.cut(범주화시킬 변수, bins = [ ],labels = [ ], right = True / False )<br><br>
+                            bins : 구간<br>
+                            labels : 각 구간의 이름<br>
+                            right : True일 땐 각 구간의 범위가 a초과 ~ b이하, False일 땐 a이상 ~ b미만
+                        </dd><br>
+                    </dl>
+                </dl>
+            </astyle>
+        </div>
+    </body>
+</html>

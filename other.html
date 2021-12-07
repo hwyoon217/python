@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset = "utf-8/">
+        <style type="text/css">
+            astyle{
+                font-size: 19px;
+                font-family: 명조;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "missing">
+            <astyle>
+                <h3>import pandas as pd<br>df = pd.read_csv("iris.csv")</h3><p></p><p></p>
+                
+                <dl>
+                    <li><b>회귀식 입력 시, 모든 column 쓰는 법</b></li>
+                    <dd>
+                        "종속변수 ~ " + " + ".join(df)
+                    </dd><br><br>
+                </dl>
+
+                <dl>
+                    <li><b>특정 조건을 제외하는 자료 뽑는 법</b></li>
+                    <dd>
+                        df.loc[ condition, ] : 특정 조건을 만족하는 자료 추출<br>
+                        df.loc[ ~condition, ] : 특정 조건을 제외하는 자료 추출<br><br><br>
+                </dl>
+                    
+                
+                <li><b>문자인 데이터를 숫자로 변환</b></li>
+                    <ol>                       
+                        <li><b>값이 2개인 경우</b></li>
+                        <dd>df["gender"] = (df["gender"]=="Male")+0<br>
+                        이 경우, Male은 1, Female은 0으로 값이 변환된다. 로지스틱 회귀를 사용할 때 유용하다.</dd><p></p>
+                        <li><b>값이 3개 이상인 경우</b></li>
+                        <dd>df["BP_cd"] = df["BP"].replace({"LOW": 0, "NORMAL": 1, "HIGH": 2})<br>
+                        replace를 사용하여 각각의 문자를 숫자로 변형하면 된다.</dd><br><br>
+                    </ol>
+                <dl>
+                    <li><b>from scipy.stats import chi2_contingency</b></li>
+                    <dd>
+                        chi2_contingency(pd.crosstab(df["A"], df["B"]))<br>카이제곱 값을 구할 때 사용하며, pd.crosstab을 빼먹지 말자.<p></p>
+                    </dd>
+                </dl>    
+            </astyle>
+        </div>
+    </body>
+</html>
